@@ -1,10 +1,10 @@
 Shft1::Application.routes.draw do
 
-  if Rails.env == 'production'
-    devise_for :admins, :controllers => { :registrations => "registrations" } 
-  else
+  #if Rails.env == 'production'
+  #  devise_for :admins, :controllers => { :registrations => "registrations" } 
+  #else
     devise_for :admins
-  end
+  #end
   resources :projects do
     resources :posts
   end
