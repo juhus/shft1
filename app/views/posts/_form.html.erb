@@ -1,0 +1,6 @@
+<%= form_for([@project, @post], remote: true) do |f|%>
+	<%= f.text_field :thumbnail, placeholder: 'thumbnail' %><br />
+	<%= f.text_field :title, placeholder: 'title' %><br />
+	<%= f.text_area :content, placeholder: 'description'%><br />
+	<%= f.submit %>
+<% end %>

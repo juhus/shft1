@@ -1,0 +1,16 @@
+<div id="container"><%= render @widgets %></div>
+
+<script>
+	var $container = $('#container');
+	$container.masonry({
+	  columnWidth: 100,
+	  itemSelector: '.widget',
+	  gutter:5
+	});
+	$(document).ready(function(){
+		$('.widget').bind('click', function(){
+			var widget = $(this).find('.widget-menu');
+			$(widget).toggle();
+		});
+	});
+</script>

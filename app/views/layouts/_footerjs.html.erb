@@ -1,0 +1,60 @@
+<script type="text/javascript">
+	var content;
+	function refreshContainer(val){
+		$('#container').empty();
+		$('#container').append(val);
+	}
+	function blackScreen(val){
+		$('#screen').fadeIn('fast');
+		$('#screen').after(val);
+		$('#screen').click(function(){
+			$(this).empty().fadeOut('fast');
+			$('.posts').fadeOut('fast').remove();
+		});
+	}
+	function projectMenu(){
+		$('.project').bind("mouseenter mouseleave", function(){
+			$(this).find('.menu').toggle();
+		});
+		//$('#projects').masonry({
+		//	columnWidth: 100,
+		//	itemSelector: '.project'
+		//});
+	}
+	$(document).ready(function(){
+		<% if admin_signed_in? %>
+			projectMenu();
+		<% end %>
+		$('#projects').hide();
+		$('#ninpad').mouseenter(function(){
+			$('.about').delay(10000).fadeOut('slow');
+		});
+		$('#logo').mouseenter(function(){
+			$('.about').fadeIn();
+		});
+		$('#select-btn').click(function(e){
+			e.preventDefault();
+			blackScreen();
+			$('#social').fadeIn('fast');
+			$('#screen').click(function(){
+				$('#social').fadeOut('fast');
+			});
+		});
+		
+	});
+    //<![CDATA[
+    $(window).load(function() { // makes sure the whole site is loaded
+        $("#status").fadeOut(); // will first fade out the loading animation
+        $("#preloader").delay(350).fadeOut("slow"); // will fade out the white DIV that covers the website.
+        $('.main').mCustomScrollbar({
+			theme:"dark",
+			scrollInertia:100,
+			autoHideScrollbar: true,
+			autoDraggerLength: true,
+			advanced:{updateOnContentResize: true},
+			contentTouchScroll: true
+		});
+    });
+	
+</script>
+

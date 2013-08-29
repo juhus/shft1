@@ -1,0 +1,18 @@
+<div id="header" class="decal">
+	<%= link_to (image_tag 'shft_logo.png', id:'logo'), root_path %><br /><br />
+	<div class="about">
+		<p>SHFT (pronounce ‘shift’)</p><br />
+		<p>When we design learning experiences,<br />we made it so hard that you'll be game over very quickly.</p><br />
+		<p>But you just can't wait to press ‘START’.</p>
+	</div>
+	<div class="btns"><%= image_tag 'ninpad-26.png', id:'ninpad' %>
+		<div id="select-btn" class="btn"></div>
+		<%= link_to '',projects_url,id:"start-btn", class:"btn", remote:true %>
+		<%= link_to '', new_project_url, id:'a-btn', remote: true %>
+		<% if admin_signed_in? %>
+			<%= link_to '', destroy_admin_session_url, method: :delete, id:'b-btn' %>
+		<% else %>
+			<%= link_to '', new_admin_session_url, id:'b-btn' %>
+		<% end %>
+	</div>
+</div>

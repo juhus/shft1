@@ -1,0 +1,8 @@
+<%= form_for @widget do |f|%>
+	<%= f.text_field :title, placeholder: 'title' %><br />
+	<%= f.text_area :description, placeholder: 'description'%><br />
+	<%= f.text_area :content, placeholder: 'content'%><br />
+	<%= f.number_field :width, placeholder: 'width'%><br />
+	<%= f.number_field :height, placeholder: 'height'%><br />
+	<%= f.submit %>
+<% end %>

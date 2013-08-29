@@ -1,0 +1,379 @@
+@import url(http://fonts.googleapis.com/css?family=Average+Sans);
+
+.transition-fast{
+	-webkit-transition: all 70ms ease-in-out;
+	-moz-transition: all 70ms ease-in-out;
+    -ms-transition: all 70ms ease-in-out;
+    -o-transition: all 70ms ease-in-out;
+	transition: all 70ms ease-in-out;
+}
+
+.boxshadow{
+	-webkit-box-shadow:  1px 1px 3px 1px rgba(0, 0, 0, 0.3);
+    box-shadow:  1px 1px 3px 1px rgba(0, 0, 0, 0.3);
+}
+.hover-btn{
+	transform:translateY(1px);
+	-webkit-transform:translateY(1px);
+	box-shadow: 0 1px 0 #333;
+}
+.push-btn{
+	transform:translateY(2px);
+	-webkit-transform:translateY(2px);
+	box-shadow: 0 0 1px #aaa;
+}
+
+body{
+	background:rgba(204,204,204,0.5);
+	font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+	margin:10px;
+	font-size:10px;
+	overflow:hidden;
+	@extend .transition-fast;
+}
+input[type=submit],input[type=email], input[type=password], input[type=text], textarea{
+	border:none;
+	box-sizing:none;
+	padding: 7px;
+	margin: 0.5em;
+	@extend .boxshadow;
+}
+input[type=submit]{
+	background: #fff;
+	border:1px solid #000;
+	margin:7px;
+	box-shadow:0 2px 0 #333;
+	&:hover{
+		@extend .hover-btn;
+	}
+	&:active{
+		@extend .push-btn;
+	}
+}
+input[type=email], input[type=password]{
+	background: #fff;
+	margin:7px 0;
+}
+#preloader{
+    position:absolute;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    background-color:rgba(204,204,204,1);
+    z-index:99; 
+}
+#screen{
+	position:absolute;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    background-color:rgba(0,0,0,0.5);
+    z-index:99; 
+    display:none;
+}
+#status{
+    width:200px;
+    height:200px;
+    position:absolute;
+    left:50%; 
+    top:40%; 
+    background-image:url('preloader2.gif');
+    background-repeat:no-repeat;
+    background-position:center;
+    background-size:180px;
+    margin:-100px 0 0 -100px;
+    text-align:center;
+    padding-top:120px;
+    font-size:1.4em;
+}	
+h1{
+	font-size:2em;
+}
+.main{
+	width:100%;
+	margin: 0 auto;
+	max-height:900px;
+	overflow:auto;
+}
+#header{
+	margin-top:3em;
+	margin-bottom:2em;
+	text-align:center;
+	position:relative;
+}
+#footer{
+	font-size:1.2em;
+	width:300px;
+	position:fixed;
+	bottom: 1em;
+	left:50%;
+	margin-left:-150px;
+	& p{text-align:center;}
+}
+.decal{
+	text-shadow: 0 1px 0 rgba(255,255,255,1);
+	color:#222;
+	font-size: 1.8em;
+	line-height:1.5em;
+}
+#logo{
+	width:45px;
+}
+#ninpad{
+	margin-top:20px;
+	width:400px;
+}
+.btns{
+	position:relative;
+}
+#select-btn, #start-btn{
+	display:inline-block;
+	position:absolute;	
+	top:130px;
+	left:50%;
+	width:24px;
+	height:8px;
+	border:2px solid #000;
+	border-radius:4px;
+	background:#fff;
+	@extend .transition-fast;
+	box-shadow: 0 2px 0 #333;
+	&:hover{
+		@extend .hover-btn;
+	}
+	&:active{
+		@extend .push-btn;
+	}
+}
+#a-btn,#b-btn{
+	display:inline-block;
+	position:absolute;
+	top:120px;
+	left:50%;
+	width:26px;
+	height:26px;
+	border-radius:14px;
+	border:2px solid #000;
+	background:#fff;
+	box-shadow: 0 2px 0 #333;
+	@extend .transition-fast;
+	&:hover{
+		@extend .hover-btn;
+	}
+	&:active{
+		@extend .push-btn;
+	}
+}
+#a-btn{
+	margin-left:72px;
+}
+#b-btn{
+	margin-left:114px;
+}
+#select-btn{
+	margin-left:-37px;
+}
+#start-btn{
+	margin-left:9px;
+}
+#social{
+	position:fixed;
+	top:30%;
+	left:50%;
+	width:50%;
+	margin-left:-26%;
+	display:none;
+	text-align:center;
+	padding:3em;
+	border:1px solid #000;
+	background:rgba(255,255,255,0.95);
+	@extend .boxshadow;
+	z-index:100;
+}
+.social-icons{
+	width:45px;
+	border:2px solid #000;
+	background:#fff;
+	margin-left:-5px;
+	@extend .boxshadow;
+    &:hover{
+    	background:#444;
+    }
+}
+
+#container{
+	padding-bottom:8em;
+	width:64em;
+	margin:0 auto;
+}
+
+/* Project */
+.project{
+	width:100%;
+	min-width:32em;
+	background:rgba(255,255,255,0.6);
+	height:12em;
+	border: 2px solid #000;
+	@extend .boxshadow;
+	margin-top:1em;
+	position:relative;
+	@extend .transition-fast;
+	& .thumbnail{
+		width:120px;
+		border-right:2px solid #000;
+		float:left;
+		margin-right:0.7em;
+		background:#fff;
+	}
+	& .title{
+		display:inline-block;
+		font-size:1.8em;
+		padding-top:0.5em;
+		text-decoration:none;
+		color:#222;
+	}
+	& .description{
+		font-size:1.4em;
+		padding-top:0.5em;
+		padding-right:0.5em;
+		line-height:1.5em;
+	}
+	& .link{
+		position:absolute;
+		bottom:0.7em;
+		left:120px;
+		font-size:1em;
+		margin-left:0.7em;
+		text-decoration:none;
+		color:#777;
+	}
+	& .menu{
+		display:none;
+		position: absolute;
+		right:1em;
+		top:0;
+		& a{
+			float:right;
+			@extend .decal;
+			text-decoration:none;
+			font-size:1em;
+			padding: 0.2em 0.7em;
+			display: inline-block;
+			background: #fff;
+			border:1px solid #000;
+			margin-top:0.5em;
+			opacity:0.95;
+			box-shadow: 0 2px 0 #333;
+			&:hover{
+				transform:translateY(1px);
+				-webkit-transform:translateY(1px);
+				background:#e9e9e9;
+				box-shadow: 0 1px 0 #333;
+			}
+			&:active{
+				transform:translateY(2px);
+				-webkit-transform:translateY(2px);
+				box-shadow: 0 0 1px #666;
+			}
+		}
+	}
+	&:hover{
+		background:rgba(255,255,255,1);
+	}
+}
+
+/* Post */
+.posts{
+	position:absolute;
+	top:0;
+	left:0;
+	margin:4em 20%;
+	width:60%;
+	height:700px;
+	overflow:auto;
+	background:rgba(204,204,204,1);
+	@extend .boxshadow;
+	border:1px solid #000;
+	z-index:100;
+	& .menu{
+		width:100%;
+	}
+	& .new{
+		display:inline-block;
+		font-size:1em;
+		height:1.5em;
+		@extend .decal;
+		text-decoration:none;
+		padding: 0.2em 0.7em;
+		margin:0.5em;
+		background: #fff;
+		border:1px solid #000;
+		box-shadow: 0 2px 0 #333;
+		opacity:0.95;
+		&:hover{
+			transform:translateY(1px);
+			-webkit-transform:translateY(1px);
+			background:#e9e9e9;
+			box-shadow: 0 1px 0 #333;
+		}
+		&:active{
+			transform:translateY(2px);
+			-webkit-transform:translateY(2px);
+			box-shadow: 0 0 1px #666;
+		}
+	}
+}
+.post{
+	width:100%;
+	height:6em;
+	background:#fff;
+	border-top:1px solid rgba(0,0,0,1);
+	border-bottom:1px solid rgba(0,0,0,1);
+	font-size:1.8em;
+	@extend .decal;
+}
+
+/* Widget */
+.widget{
+	background:#fff;
+	position:relative;
+	margin-bottom:10px;
+}
+
+.widget-menu{
+	display:none;
+	position: absolute;
+	top: 0;
+	right: 0;
+}
+
+/* Devise */
+h2{
+	font-size:1.8em;
+	padding-bottom:0.5em;
+}
+.login-panel,.project-form{
+	width:300px;
+	margin:0 auto;
+	text-align:center;
+	padding:3em;
+	border:1px solid #000;
+	background:rgba(204,204,204,0.75);
+	@extend .boxshadow;
+	& input[type=email], input[type=password], input[type=text], textarea{
+		width:18em;
+	}
+	& input[type=submit]{
+		width:19em;
+	}
+}
+
+.dummy{
+	background:#abc;
+	width:50%;
+	margin:0 auto;
+	height:1200px;
+}
+

@@ -1,0 +1,5 @@
+content = '<div class="posts">'+"<%= escape_javascript(render @posts)%>"+'</div>';
+blackScreen(content);
+content = '<div class="menu"><%= link_to "NEW", new_project_post_url(@project),class:"new",remote: true %></div>';
+$('.posts').prepend(content);
+

@@ -1,0 +1,10 @@
+<div class="project">
+	<%= image_tag project.thumbnail, class:'thumbnail'%>
+	<%= link_to project.title, project_posts_url(project), class:'title', remote: true %>
+	<p class="description"><%= project.description %></p>
+	<%= link_to project.link, project.link, class:'link', target:'_blank' %>
+	<div class="menu">
+		<%= link_to 'EDIT', edit_project_url(project), remote: true %><br />
+		<%= link_to 'DELETE', project_url(project), method: :delete, confirm: 'Are you sure?'%>
+	</div>
+</div>
