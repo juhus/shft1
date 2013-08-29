@@ -22,14 +22,18 @@
 	-webkit-transform:translateY(2px);
 	box-shadow: 0 0 1px #aaa;
 }
+html,body{
+	height:100%;
+}
 
 body{
 	background:rgba(204,204,204,0.5);
 	font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
 	margin:10px;
 	font-size:10px;
-	overflow:auto;
+	overflow:hidden;
 	@extend .transition-fast;
+	max-height:100%;
 }
 .main{
 	width:100%;
@@ -37,6 +41,7 @@ body{
 	overflow:hidden;
 	max-height:100%;
 }
+
 input[type=submit],input[type=email], input[type=password], input[type=text], textarea{
 	border:none;
 	box-sizing:none;
